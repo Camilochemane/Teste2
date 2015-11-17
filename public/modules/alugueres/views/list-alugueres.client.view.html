@@ -15,10 +15,10 @@
         <thead>
             <tr>
                 <th ng-click="sort('titulo')">Titulo
-                    <span class="glyphicon sort-icon" ng-show="sortKey=='ano'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                    <span class="glyphicon sort-icon" ng-show="sortKey=='titulo'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
                  </th>
                 <th ng-click="sort('utente')">Utente
-                    <span class="glyphicon sort-icon" ng-show="sortKey=='tempo'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                    <span class="glyphicon sort-icon" ng-show="sortKey=='utente'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
                 </th>
                 <th ng-click="sort('DataEmprestimo')">DataEmprestimo
                     <span class="glyphicon sort-icon" ng-show="sortKey=='DataEmprestimo'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
@@ -32,7 +32,7 @@
         </thead>
         <tbody>
             <tr ng-repeat="aluguere in alugueres|orderBy:sortKey:reverse|filter:search" >
-                <td><a data-ng-href="#!/alugueres/{{exame._id}}"> {{aluguere.titulo}} </a></td>
+                <td><a data-ng-href="#!/alugueres/{{aluguere._id}}"> {{aluguere.titulo}} </a></td>
                 <td>{{filme.aluguere.titulo}}</td>
                 <td>{{utente.aluguere.utente}}</td>
                 <td>{{aluguer.DataEmprestimo}}</td>
