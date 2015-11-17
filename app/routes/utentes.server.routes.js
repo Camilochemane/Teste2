@@ -9,6 +9,10 @@ module.exports = function(app) {
 		.get(utentes.list)
 		.post(users.requiresLogin, utentes.create);
 
+	app.route('/utentes/listar')
+		.get(utentes.listar);
+
+
 	app.route('/utentes/:utenteId')
 		.get(utentes.read)
 		.put(users.requiresLogin, utentes.hasAuthorization, utentes.update)

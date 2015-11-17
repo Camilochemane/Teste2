@@ -1,18 +1,45 @@
 <section data-ng-controller="AlugueresController" data-ng-init="find()">
-    <div class="page-header">
-        <h1>Alugueres</h1>
+     <div class="page-header">
+      <h4>  Aluguer </h4>
+        <button class="btn btn-success pull-right" data-ng-click="direct()"><span class="glyphicon glyphicon-plus"></span> Novo Aluguer</button>
     </div>
-    <div class="list-group">
-        <a data-ng-repeat="aluguere in alugueres" data-ng-href="#!/alugueres/{{aluguere._id}}" class="list-group-item">
-			<small class="list-group-item-text">
-				Posted on
-				<span data-ng-bind="aluguere.created | date:'medium'"></span>
-				by
-				<span data-ng-bind="aluguere.user.displayName"></span>
-			</small>
-			<h4 class="list-group-item-heading" data-ng-bind="aluguere.name"></h4>
-        </a>
-    </div>
+
+    <form class="form-inline">
+        <div class="form-group">
+            <label >Busca</label>
+            <input type="text" ng-model="search" class="form-control" placeholder="qualquer texto">
+        </div>
+    </form>
+
+   <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th ng-click="sort('titulo')">Titulo
+                    <span class="glyphicon sort-icon" ng-show="sortKey=='ano'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                 </th>
+                <th ng-click="sort('utente')">Utente
+                    <span class="glyphicon sort-icon" ng-show="sortKey=='tempo'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                </th>
+                <th ng-click="sort('DataEmprestimo')">DataEmprestimo
+                    <span class="glyphicon sort-icon" ng-show="sortKey=='DataEmprestimo'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                </th>
+
+                <th ng-click="sort('DataDevolucao')">DataDevolucao
+                    <span class="glyphicon sort-icon" ng-show="sortKey=='DataDevolucao'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                </th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="aluguere in alugueres|orderBy:sortKey:reverse|filter:search" >
+                <td><a data-ng-href="#!/alugueres/{{exame._id}}"> {{aluguere.titulo}} </a></td>
+                <td>{{filme.aluguere.titulo}}</td>
+                <td>{{utente.aluguere.utente}}</td>
+                <td>{{aluguer.DataEmprestimo}}</td>
+                <td>{{aluguer.DataDevolucao}}</td>
+            </tr>
+        </tbody>
+    </table>
     <div class="alert alert-warning text-center" data-ng-hide="!alugueres.$resolved || alugueres.length">
     	No Alugueres yet, why don't you <a href="/#!/alugueres/create">create one</a>?
     </div>

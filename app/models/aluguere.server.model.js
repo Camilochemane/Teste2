@@ -10,14 +10,14 @@ var mongoose = require('mongoose'),
  * Aluguere Schema
  */
 var AluguereSchema = new Schema({
-	_utente: [{
+	utente: {
 	type: Schema.ObjectId,
-		ref: 'Utente'
-	}],
-	_filmes: [{
+		ref: 'utente'
+	},
+	filme: {
 		type: Schema.ObjectId,
-		ref: 'Filme'
-	}],
+		ref: 'filme'
+	},
 
 	dataEmprestimo: {
 		type: Date,

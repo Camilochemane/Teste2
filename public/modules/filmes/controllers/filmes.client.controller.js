@@ -30,6 +30,10 @@ angular.module('filmes').controller('FilmesController', ['$scope', '$stateParams
 			});
 		};
 
+          $scope.direct= function(){
+			$location.path('filmes/create');
+		};
+
 		// Remove existing Filme
 		$scope.remove = function(filme) {
 			if ( filme ) { 

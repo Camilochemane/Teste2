@@ -46,6 +46,11 @@ angular.module('utentes').controller('UtentesController', ['$scope', '$statePara
 			}
 		};
 
+
+		$scope.direct= function(){
+			$location.path('utentes/create');
+		};
+
 		// Update existing Utente
 		$scope.update = function() {
 			var utente = $scope.utente;

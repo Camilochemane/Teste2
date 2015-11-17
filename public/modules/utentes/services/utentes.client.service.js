@@ -7,7 +7,7 @@ angular.module('utentes').factory('Utentes', ['$resource',
 		}, {
 			update: {
 				method: 'PUT'
-			}
+			},
 
 
 			 listar:{

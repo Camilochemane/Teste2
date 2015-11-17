@@ -7,7 +7,7 @@ angular.module('filmes').factory('Filmes', ['$resource',
 		}, {
 			update: {
 				method: 'PUT'
-			}
+			},
 
 
 			 listar:{

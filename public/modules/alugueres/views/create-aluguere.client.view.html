@@ -1,27 +1,25 @@
-<section data-ng-controller="AlugueresController">
+<section data-ng-controller="AlugueresController" data-ng-init="listaUtentesFilmes()">
     <div class="page-header">
-        <h1>Alugare de filme</h1>
+        <h1>Aluguere de filme</h1>
     </div>
     <div class="col-md-8 col-md-offset-2 panel">
         <form class="form-horizontal" data-ng-submit="create()" novalidate>
             <fieldset>
                
 
-                <div class="form-group">
-                    <label class="control-label" for="titulo">Titulo</label>
-                    <div class="controls">
+                     <div class="form-group">
+                        <label class="control-label" for="filme">Titulo</label>
                         <select ng-model="filme" ng-options="filme.titulo for filme in filmes track by filme._id">
                           <option value="">-- Escolher Titulo --</option>
-                </select>
-                    </div>
+                        </select>
                     </div>
 
 
                      <div class="form-group">
-                    <label class="control-label" for="titulo">Utente</label>
+                    <label class="control-label" for="utente">Utente</label>
                     <div class="controls">
-                        <select ng-model="utente" ng-options="utente.titulo for utente in utentes track by utentes._id">
-                          <option value="">-- Escolher Titulo --</option>
+                        <select ng-model="utente" ng-options="utente.name for utente in utentes track by utente._id">
+                          <option value="">-- Escolher Utente --</option>
                         </select>
                     </div>
                     </div>

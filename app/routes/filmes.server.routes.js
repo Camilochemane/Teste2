@@ -9,6 +9,11 @@ module.exports = function(app) {
 		.get(filmes.list)
 		.post(users.requiresLogin, filmes.create);
 
+	
+app.route('/filmes/listar')
+		.get(filmes.listar);
+
+
 	app.route('/filmes/:filmeId')
 		.get(filmes.read)
 		.put(users.requiresLogin, filmes.hasAuthorization, filmes.update)

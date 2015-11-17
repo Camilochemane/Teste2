@@ -5,8 +5,8 @@
  */
 var should = require('should'),
 	mongoose = require('mongoose'),
-	utente = mongoose.model('utente'),
-	filme = mongoose.model('filme'),
+	Utente = mongoose.model('Utente'),
+	Filme = mongoose.model('Filme'),
 	User = mongoose.model('User'),
 	Aluguere = mongoose.model('Aluguere');
 
@@ -31,8 +31,8 @@ describe('Aluguere Model Unit Tests:', function() {
 
 		user.save(function() { 
 			aluguere = new Aluguere({
-				Filme: filme,
-				Utente: utente,
+				filme: filme,
+				utente: utente,
 				dataEmprestimo: 'dataEmprestimo',
 				DataDevolucao:'DataDevolucao',
 				user: user

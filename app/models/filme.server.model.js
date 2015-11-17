@@ -34,7 +34,7 @@ titulo: {
 	actorPrincipal: {
 		type: String,
 		default: '',
-		required: 'Please fill Filme actorPrincipal',
+		//required: 'Please fill Filme actorPrincipal',
 		trim: true
 	},
 

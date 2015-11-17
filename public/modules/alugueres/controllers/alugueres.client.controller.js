@@ -11,8 +11,8 @@ angular.module('alugueres').controller('AlugueresController', ['$scope', '$state
 			var aluguere = new Alugueres ({
 				DataEmprestimo: this.DataEmprestimo,
 				Dataevolucao: this.Dataevolucao,
-			   	_filme:this.filme._id,
-				_utente:this.utente._id
+				utente:this.utente._id,
+				filme:this.filme._id
 
 			});
 
@@ -27,6 +27,9 @@ angular.module('alugueres').controller('AlugueresController', ['$scope', '$state
 			});
 		};
 
+$scope.direct= function(){
+			$location.path('alugueres/create');
+		};
 
 		$scope.listaUtentesFilmes=function(){
 			$scope.Utentes=Utentes.listar();
