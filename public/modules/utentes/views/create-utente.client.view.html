@@ -1,0 +1,57 @@
+<section data-ng-controller="UtentesController">
+    <div class="page-header">
+        <h1>Tegistrar Utente</h1>
+    </div>
+    <div class="col-md-8 col-md-offset-2 panel">
+        <form class="form-horizontal" data-ng-submit="create()" novalidate>
+            <fieldset>
+                <div class="form-group">
+                    <label class="control-label" for="name">Name</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="name" id="name" class="form-control" placeholder="Name" required>
+                    </div>
+                </div>
+
+                 <div class="form-group">
+                    <label class="control-label" for="idade">Idade</label>
+                    <div class="controls">
+                        <input type="number" data-ng-model="idade" id="idade" class="form-control" placeholder="idade" required>
+                    </div>
+                </div>
+
+                 <div class="form-group">
+                    <label class="control-label" for="sexo">Sexo</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="sexo" id="sexo" class="form-control" placeholder="sexo" required>
+                    </div>
+                </div>
+
+                 <div class="form-group">
+                    <label class="control-label" for="distrito">Distrito</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="distrito" id="distrito" class="form-control" placeholder="distrito" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="bairro">Bairro</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="bairro" id="bairro" class="form-control" placeholder="bairro" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="bi">Bilhete de I</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="bi" id="bi" class="form-control" placeholder="bi" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary"> Gravar</button>
+                    <button data-ng-click="limpaCampos" class="btn btn-warning"><span class=" glyphicon glyphicon-remove"></span> Limpar</button>
+                </div>
+				<div data-ng-show="error" class="text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+            </fieldset>
+        </form>
+    </div>
+</section>

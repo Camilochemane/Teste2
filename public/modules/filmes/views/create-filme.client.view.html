@@ -1,0 +1,64 @@
+<section data-ng-controller="ExamesController">
+    <div class="page-header">
+        <h1>Novo Filme</h1>
+    </div>
+    <div class="col-md-8 col-md-offset-2 panel">
+        <form class="form-horizontal espaco" data-ng-submit="create()" novalidate>
+            <fieldset>
+                   <div class="form-group">
+                        <label class="control-label" for="titulo">Titulo</label>
+                        <div class="controls">
+                            <input type="text" data-ng-model="titulo" id="titulo" class="form-control" placeholder="titulo" required>
+                        </div>
+                    </div>
+
+                     <div class="form-group">
+                        <label class="control-label" for="sinopse">Sinopse</label>
+                        <div class="controls">
+                            <input type="text" data-ng-model="sinopse" id="sinopse" class="form-control" placeholder="sinopse" required>
+                        </div>
+                    </div>
+
+                     <div class="form-group">
+                        <label class="control-label" for="categoria">Categoria</label>
+                        <div class="controls">
+                            <input type="text" data-ng-model="categoria" id="categoria" class="form-control" placeholder="categoria" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label" for="actorPrincimpal">Actor principal</label>
+                        <div class="controls">
+                            <input type="text" data-ng-model="actorPrincimpal" id="actorPrincimpal" class="form-control" placeholder="actorPrincimpal" required>
+                        </div>
+                    </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="actor">Actor</label>
+                    <div class="controls">
+                        <textarea type="text" data-ng-model="actor" id="actor" class="form-control"required="true">
+                        </textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="estado">Estado</label>
+                    <div class="controls">
+                        <textarea type="text" data-ng-model="estado" id="estado" class="form-control"required="true">
+                        </textarea>
+                    </div>
+                </div>
+
+
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary"> Gravar</button>
+                    <button data-ng-click="limpaCampos" class="btn btn-warning"><span class=" glyphicon glyphicon-remove"></span> Limpar</button>
+                </div>
+                <div data-ng-show="error" class="text-danger">
+                    <strong data-ng-bind="error"></strong>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</section>

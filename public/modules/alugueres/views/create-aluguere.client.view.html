@@ -1,0 +1,52 @@
+<section data-ng-controller="AlugueresController">
+    <div class="page-header">
+        <h1>Alugare de filme</h1>
+    </div>
+    <div class="col-md-8 col-md-offset-2 panel">
+        <form class="form-horizontal" data-ng-submit="create()" novalidate>
+            <fieldset>
+               
+
+                <div class="form-group">
+                    <label class="control-label" for="titulo">Titulo</label>
+                    <div class="controls">
+                        <select ng-model="filme" ng-options="filme.titulo for filme in filmes track by filme._id">
+                          <option value="">-- Escolher Titulo --</option>
+                </select>
+                    </div>
+                    </div>
+
+
+                     <div class="form-group">
+                    <label class="control-label" for="titulo">Utente</label>
+                    <div class="controls">
+                        <select ng-model="utente" ng-options="utente.titulo for utente in utentes track by utentes._id">
+                          <option value="">-- Escolher Titulo --</option>
+                        </select>
+                    </div>
+                    </div>
+
+                 <div class="form-group">
+                    <label class="control-label" for="DataEmprestimo">Data Emprestimo</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="DataEmprestimo" id="DataEmprestimo" class="form-control" placeholder="DataEmprestimo" required>
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label class="control-label" for="DataDevolucao">Data Devolucao</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="DataDevolucao" id="DataDevolucao" class="form-control" placeholder="DataDevolucao" required>
+                    </div>
+                </div>
+
+                 <div class="form-group">
+                    <button type="submit" class="btn btn-primary"> Submeter</button>
+                    <button data-ng-click="limpaCampos" class="btn btn-warning"><span class=" glyphicon glyphicon-remove"></span> Cancelar</button>
+                </div>
+				<div data-ng-show="error" class="text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+            </fieldset>
+        </form>
+    </div>
+</section>
